@@ -1,0 +1,16 @@
+---
+- name: deploy my_lambda_function
+  hosts: 127.0.0.1
+  connection: local
+  vars:
+    aws_region: eu-east-1
+    code_path: lambda_function/
+    zip_name: lambda_function_payload.zip
+  tasks:
+    - action: Deploy function lambda_function
+    - type: AWS_LAMBDA_DEPLOY
+    - function_name: lambda_function
+    - integration_hash: filebase64sha256
+    - region: eu-east-1
+
+

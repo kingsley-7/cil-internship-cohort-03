@@ -1,0 +1,9 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Lambda function and S3 bucket'
+Resources:
+  Function:
+    Type: 'AWS::Lambda::Function'
+
+  myBucket:
+    Type: 'AWS::S3::Bucket'
